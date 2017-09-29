@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 import json
-import urllib
-import urllib2
-
+try:
+    import urllib
+    from urllib2 import urlopen
+except ImportError:
+    from urllib.parse import urlencode
+    import urllib.request as xyz
 
 class bittrex(object):
 
@@ -14,13 +17,13 @@ class bittrex(object):
         if method in self.public:
             url = 'https://bittrex.com/api/v1.1/public/'
         else:
-            print 'Something went wrong, sorry.'
+            print ('Something went wrong, sorry.')
 
-        url += method + '?' + urllib.urlencode(values)
+        url += method + '?' + urlencode(values)
         headers = {}
 
-        req = urllib2.Request(url, headers=headers)
-        response = json.loads(urllib2.urlopen(req).read())
+        req = xyz.Request(url, headers=headers)
+        response = json.loads(xyz.urlopen(req).read())
         # print response
 
     # if response["result"]:
