@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 import json
 try:
-    import urllib
-    from urllib2 import urlopen
+    from urllib.parse import urlparse, urlencode
+    from urllib.request import urlopen, Request
+    from urllib.error import HTTPError
 except ImportError:
-    from urllib.parse import urlencode
-    import urllib.request as xyz
+    from urlparse import urlparse
+    from urllib import urlencode
+    from urllib2 import urlopen, Request, HTTPError
+
 
 class bittrex(object):
 
@@ -22,8 +25,8 @@ class bittrex(object):
         url += method + '?' + urlencode(values)
         headers = {}
 
-        req = xyz.Request(url, headers=headers)
-        response = json.loads(xyz.urlopen(req).read())
+        req = Request(url, headers=headers)
+        response = json.loads(urlopen(req).read())
         # print response
 
     # if response["result"]:
