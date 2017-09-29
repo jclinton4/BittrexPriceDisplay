@@ -7,7 +7,7 @@ except ImportError:
     from tkinter import *
 
 
-class MyFirstGUI:
+class BittrexGUI:
     def __init__(self, master):
         self.master = master
         master.title("Bittrex Price Checker")
@@ -55,6 +55,6 @@ class MyFirstGUI:
 
 
 root = Tk()
-my_gui = MyFirstGUI(root)
+my_gui = BittrexGUI(root)
 my_gui.update_price()
 root.mainloop()
