@@ -1,5 +1,8 @@
 # BittrexPriceDisplay
-Python GUI that grabs the price of a coin from Bittrex and displays it.
+This will be a web page that displays the current data of different Coins form Bittrex
+The goal of this project is to expand my knowledge of Web design and python development.
+
+Deprecated - Python GUI that grabs the price of a coin from Bittrex and displays it.
 
 Getting Started
 =
@@ -25,3 +28,8 @@ Show top changers within 10% of 24hr high
 Send alerts via email or text
 
 Allow for trading, possibly with the use of an algo
+
+Future Development
+=
+Instead of creating a GUI, create a webpage
+to learn React, Django, SQL and other technologies.
