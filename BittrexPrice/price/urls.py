@@ -1,7 +1,7 @@
-from django.conf.urls import url
-from price import views
+from django.urls import path
+from . import views
 
 
 urlpatterns = [
-    url(r'^$', views.HomePageView.as_view()),
+    path('', views.index, name='index'),
 ]
